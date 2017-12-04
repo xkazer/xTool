@@ -67,11 +67,16 @@ def main():
     parser.add_option("-s", "--replace", dest="sstr", default="",
         help="set replace str")
 
-    (OPTIONS, ARGS) = parser.parse_args()
-    if "Windows" in platform.system():
-        ARGS[0] = ARGS[0].decode("gbk")
-    else:
-        ARGS[0] = ARGS[0].decode("utf-8")
+    try:
+        (OPTIONS, ARGS) = parser.parse_args()
+        if "Windows" in platform.system():
+            ARGS[0] = ARGS[0].decode("gbk")
+        else:
+            ARGS[0] = ARGS[0].decode("utf-8")
+    except Exception, e:
+        parser.print_usage()
+        sys.exit(0)
+    
     lookup()
 
 
