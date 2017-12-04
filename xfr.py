@@ -34,12 +34,13 @@ def searchfile(filepath):
                         print filepath, "line ("+str(linenum)+"):"
                         print line
     except Exception, e:
-        if OPTIONS.color:
-            print("\033[34;1m%s\033[0m" % filepath)
-            print("\033[0;31m%s\033[0m" % str(e))
-        else:
-            print filepath
-            print str(e)
+        if OPTIONS.verbose:
+            if OPTIONS.color:
+                print("\033[34;1m%s\033[0m" % filepath)
+                print("\033[0;31m%s\033[0m" % str(e))
+            else:
+                print filepath
+                print str(e)
 
 # lookup path
 def lookup():
@@ -62,6 +63,7 @@ def main():
         help="set work path")
     parser.add_option("-r", "--regex", dest="regex", action="store_true")
     parser.add_option("-c", "--color", dest="color", action="store_true")
+    parser.add_option("-v", "--verbose", dest="verbose", action="store_true")
     parser.add_option("-s", "--replace", dest="sstr", default="",
         help="set replace str")
 
