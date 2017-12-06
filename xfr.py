@@ -94,8 +94,6 @@ def main():
     parser.add_option("-r", "--regex", dest="regex", action="store_true")
     parser.add_option("-c", "--color", dest="color", action="store_true")
     parser.add_option("-v", "--verbose", dest="verbose", action="store_true")
-    parser.add_option("-s", "--replace", dest="sstr", default="",
-        help="set replace str")
 
     try:
         (OPTIONS, ARGS) = parser.parse_args()

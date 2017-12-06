@@ -104,3 +104,35 @@ class XColor(object):
 
 
 Color = XColor()
+
+
+if __name__=="__main__":
+    Color.setColor(Color.RED)
+    Color.println("red")
+    Color.setColor(Color.GREEN)
+    Color.println("green")
+    Color.setColor(Color.BLUE)
+    Color.println("blue")
+    Color.setColor(Color.YELLOW)
+    Color.println("yellow")
+    Color.setColor(Color.PINK)
+    Color.println("pink")
+    Color.setColor(Color.CYAN)
+    Color.println("cyan")
+    Color.resetColor()
+    print
+
+    Color.setColor(Color.WHITE, Color.RED)
+    Color.println("red")
+    Color.setColor(Color.WHITE, Color.GREEN)
+    Color.println("green")
+    Color.setColor(Color.WHITE, Color.BLUE)
+    Color.println("blue")
+    Color.setColor(Color.WHITE, Color.YELLOW)
+    Color.println("yellow")
+    Color.setColor(Color.WHITE, Color.PINK)
+    Color.println("pink")
+    Color.setColor(Color.WHITE, Color.CYAN)
+    Color.println("cyan")
+    Color.resetColor()
+    print
