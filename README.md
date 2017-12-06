@@ -57,7 +57,7 @@ Options:
   -c, --color
   -v, --verbose
 ```
-xfr.py -p . -f ".*py$" win*dow -r -c
+xfr.py -p . -f ".*py$" "win*dow" -r -c
 ```
 
 ![](png/xfr.png)
