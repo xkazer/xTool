@@ -105,7 +105,8 @@ def main():
             try:
                 color_mod = __import__("xcolor")
                 gl_color = color_mod.Color
-            except:
+            except Exception,e:
+                logging.warn("load xcolor failed:"+str(e))
                 OPTIONS.color = False
         lookup()
     except Exception, e:

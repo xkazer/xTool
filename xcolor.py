@@ -50,7 +50,7 @@ class XColor(object):
     def resetWindowsColor(self):
         self._mod_ctype.windll.kernel32.SetConsoleTextAttribute(self._std_out, Color.WHITE)
 
-    def setWindowsColor(self, fore_color, bg_color=BLACK):
+    def setWindowsColor(self, fore_color, bg_color=None):
         color = self.getWindowsForeColor(fore_color) | self.getWindowsBgColor(bg_color)
         self._mod_ctype.windll.kernel32.SetConsoleTextAttribute(self._std_out, color)
 
@@ -75,14 +75,17 @@ class XColor(object):
         elif self.CYAN == color:         return 46
         else:                            return 40 
 
-    def setLinuxColor(self, fore_color, bg_color=BLACK):
-        sys.stdout.write("\033["+str(self.getLinuxForeColor(fore_color))+";"
-            +str(self.getLinuxBgColor(bg_color))+"m")
+    def setLinuxColor(self, fore_color, bg_color=None):
+        if None == bg_color:
+            color_attr="\033[0;"+str(self.getLinuxForeColor(fore_color))+"m"
+        else:
+            color_attr="\033[0;"+str(self.getLinuxForeColor(fore_color))+";"+str(self.getLinuxBgColor(bg_color))+"m"
+        sys.stdout.write(color_attr)
 
     def resetLinuxColor(self):
         sys.stdout.write("\033[0m")
 
-    def setColor(self, fore_color, bg_color=BLACK):
+    def setColor(self, fore_color, bg_color=None):
         if self._is_windows:
             self.setWindowsColor(fore_color, bg_color)
         else:
