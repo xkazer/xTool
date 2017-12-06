@@ -34,10 +34,14 @@ print color text, support Windows/Mac/Linux
     Color.resetColor()
     print
 ```
-Windows:
+- Windows:
+
 ![](png/xcolor_win.png)
-Mac:
+
+- Mac:
+
 ![](png/xcolor_mac.png)
+
 
 ### xfr
 search string from test,support regex
@@ -55,4 +59,5 @@ Options:
 ```
 xfr.py -p . -f ".*py$" win*dow -r -c
 ```
+
 ![](png/xfr.png)
