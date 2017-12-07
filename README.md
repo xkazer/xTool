@@ -45,7 +45,7 @@ print color text, support Windows/Mac/Linux
 
 ### xfr
 search string from test,support regex
-
+```
 Usage: xfr.py [options] str
 
 Options:
@@ -56,6 +56,7 @@ Options:
   -r, --regex
   -c, --color
   -v, --verbose
+```
 ```
 xfr.py -p . -f ".*py$" "win*dow" -r -c
 ```
